@@ -5,6 +5,6 @@ module Types
     description 'attributes for creating or updating a genre'
 
     argument :description, String, 'short description about the genre', required: false
-    argument :name, String, 'name of thegenre'
+    argument :name, String, 'name of the genre'
   end
 end

@@ -14,6 +14,8 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    field :game, resolver: Resolvers::GameResolver
+    field :games, resolver: Resolvers::GamesResolver
     field :genre, resolver: Resolvers::GenreResolver
     field :genres, resolver: Resolvers::GenresResolver
 

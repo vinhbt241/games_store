@@ -1,24 +1,115 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TEST SCRIPTS
+```
+# fields
+{
+  genres {
+    id
+    name
+    description
+  }
+}
 
-Things you may want to cover:
+# alias
+{
+  FirstGenre: genre(id: "...") {
+    name
+    description
+  }
 
-* Ruby version
+  SecondGenre: genre(id: "...") {
+    name
+    description
+  }
+}
 
-* System dependencies
+# fragments
+{
+  leftComparision: genre(id: "...") {
+    ...comparisionFields
+  }
 
-* Configuration
+  rightComparision: genre(id: "...") {
+    ...comparisionFields
+  }
+}
 
-* Database creation
+fragment comparisionFields on Genre {
+  name
+  games {
+    name
+    releaseDate
+  }
+}
 
-* Database initialization
+# variables
+query GameAndGenre($gameId: ID!) {
+  game(id: $gameId) {
+    name
+    releaseDate
+    genre {
+      name
+    }
+  }
+}
 
-* How to run the test suite
+# mutation
+mutation {
+  createGenre(input: {
+    attributes: {
+      name: "Detective",
+      description: "Game where you solve cases"
+    }
+  }){
+    genre {
+      name
+      description
+    }
+    errors
+  }
+}
 
-* Services (job queues, cache servers, search engines, etc.)
+mutation {
+  updateGenre(input: {
+    attributes: {
+      id: "005ecee9-8b5f-4e75-bec3-b2d5cece6c18",
+      description: "Game where you solve puzzle"
+    }
+  }) {
+    genre {
+      id
+      name
+      description
+    }
 
-* Deployment instructions
+    errors
+  }
+}
 
-* ...
+mutation {
+  destroyGenre(input: {
+    attributes: {
+      id: "005ecee9-8b5f-4e75-bec3-b2d5cece6c18"
+    }
+  }) {
+    genre {
+      id
+      name
+      description
+    }
+    deletedId
+  }
+}
+
+# using arguments with field
+{
+  genres {
+    name
+    games(from: "...") {
+      name
+      releaseDate
+    }
+  }
+}
+```
