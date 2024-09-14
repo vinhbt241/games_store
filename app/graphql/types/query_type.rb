@@ -14,6 +14,9 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    field :genre, resolver: Resolvers::GenreResolver
+    field :genres, resolver: Resolvers::GenresResolver
+
     def node(id:)
       context.schema.object_from_id(id, context)
     end

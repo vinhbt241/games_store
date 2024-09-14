@@ -25,3 +25,9 @@ Metrics/MethodLength:
 
 GraphQL/FieldDescription:
   Enabled: false
+
+GraphQL/ArgumentDescription:
+  Enabled: false
+
+GraphQL/ObjectDescription:
+  Enabled: false
