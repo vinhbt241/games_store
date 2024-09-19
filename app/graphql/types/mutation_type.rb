@@ -2,8 +2,8 @@
 
 module Types
   class MutationType < Types::BaseObject
-    field :create_genre, mutation: Mutations::CreateGenre
-    field :destroy_genre, mutation: Mutations::DestroyGenre
-    field :update_genre, mutation: Mutations::UpdateGenre
+    field :genre_create, mutation: Mutations::GenreCreate
+    field :genre_delete, mutation: Mutations::GenreDelete
+    field :genre_update, mutation: Mutations::GenreUpdate
   end
 end

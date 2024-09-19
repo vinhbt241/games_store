@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class GamesStoreSchema < GraphQL::Schema
+  max_depth 15
+  max_complexity 300
+
   mutation(Types::MutationType)
   query(Types::QueryType)
 
