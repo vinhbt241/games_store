@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'graphql'
 gem 'importmap-rails'

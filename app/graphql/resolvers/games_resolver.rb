@@ -9,6 +9,8 @@ module Resolvers
     argument :genre_id, ID, required: false, description: 'Games from Genre UUID'
 
     def resolve(genre_id: nil)
+      # return Game.none if context[:current_user].blank?
+
       return Game.where(genre_id:) if genre_id.present?
 
       ::Game.all

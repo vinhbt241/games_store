@@ -34,3 +34,6 @@ GraphQL/ObjectDescription:
 
 GraphQL/ExtractType:
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
