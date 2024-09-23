@@ -18,6 +18,7 @@ module Types
     field :games, resolver: Resolvers::GamesResolver
     field :genre, resolver: Resolvers::GenreResolver
     field :genres, resolver: Resolvers::GenresResolver
+    field :purchased_games, resolver: Resolvers::PurchasedGamesResolver
 
     def node(id:)
       context.schema.object_from_id(id, context)
