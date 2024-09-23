@@ -19,5 +19,15 @@ module Mutations
 
       { game: context[:current_user].purchased_games.find_by(id: purchase.game_id) }
     end
+
+    def ready?(purchase_input:)
+      raise GraphQL::ExecutionError, 'User can not be determined' if context[:current_user].blank?
+
+      game = Game.find(purchase_input[:game_id])
+
+      return true unless game.release_date > Date.current && !context[:current_user].vip?
+
+      raise GraphQL::ExecutionError, 'Only VIP member can pre-purchase games'
+    end
   end
 end

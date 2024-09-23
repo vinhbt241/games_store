@@ -7,7 +7,7 @@ module Resolvers
     type [Types::GameType], null: false
 
     def resolve
-      raise GraphQL::ExecutionError.new('Invalid user'), 'User can not be determined' if context[:current_user].blank?
+      raise GraphQL::ExecutionError, 'User can not be determined' if context[:current_user].blank?
 
       context[:current_user].purchased_games
     end
