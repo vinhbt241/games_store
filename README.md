@@ -112,4 +112,67 @@ mutation {
     }
   }
 }
+
+# See all games
+# {
+#   games {
+#     id
+#     name
+#     releaseDate
+#   }
+# }
+
+# See list of purchased game
+# {
+#   purchasedGames {
+#     name
+#     releaseDate
+#   }
+# }
+
+# purchase game
+# mutation {
+#   purchaseCreate(input: {
+#     purchaseInput: {
+#       gameId: "92ec0054-a828-4f95-ae3e-a35ed0476231"
+#     }
+#   }) {
+#     game {
+#       name
+#     }
+#   }
+# }
+
+# login
+# mutation {
+#   sessionCreate(input: {
+#     credentials: {
+#       email: "test_user_1@gmail.com",
+#       password: "123456"
+#     }
+#   }) {
+#     token
+#   }
+# }
+
+# logout
+# mutation {
+#   sessionDelete(input: {}) {
+#     message
+#   }
+# }
+
+# signup
+# mutation {
+#   userCreate(input: {
+#     userInput: {
+#       email: "test_user_1@gmail.com",
+#       password: "123456"
+#     }
+#   }) {
+#     user {
+#       email
+#     }
+#   }
+# }
 ```
